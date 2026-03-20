@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Logo from './assets/dexton-logo-png.png'
-import FullLogo from './assets/dexton-fullpng.png'
+// import FullLogo from './assets/dexton-fullpng.png'
 import Hero from './components/hero';
 import About from './components/about';
 import Services from './components/services';
@@ -25,13 +25,13 @@ function App() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMenuOpen(false); // Close mobile menu after clicking
-  };
+  // const scrollToSection = (sectionId) => {
+  //   const element = document.getElementById(sectionId);
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  //   setIsMenuOpen(false); // Close mobile menu after clicking
+  // };
 
   // Hide splash after 1.5 seconds
   React.useEffect(() => {
@@ -163,7 +163,7 @@ function App() {
 
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-8">
-                <a onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-700 hover:text-black font-medium transition-colors duration-200 cursor-pointer hover:underline">Home</a>
+                <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-700 hover:text-black font-medium transition-colors duration-200 cursor-pointer hover:underline bg-transparent border-none p-0">Home</button>
                 <a href="#about" className="text-gray-700 hover:text-black font-medium transition-colors duration-200 hover:underline">About</a>
                 <a href="#services" className="text-gray-700 hover:text-black font-medium transition-colors duration-200 hover:underline">Services</a>
                 <a href="#portfolio" className="text-gray-700 hover:text-black font-medium transition-colors duration-200 hover:underline">Portfolio</a>
@@ -541,10 +541,10 @@ function App() {
                       whileHover={{ x: 5 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <a href="#" className="flex items-center space-x-2 text-gray-300 hover:text-white transition-all duration-200 text-sm group">
+                      <button onClick={() => window.open(link.url, '_blank')} className="flex items-center space-x-2 text-gray-300 hover:text-white transition-all duration-200 text-sm group bg-transparent border-none p-0">
                         <span className="group-hover:scale-110 transition-transform duration-200">{link.icon}</span>
                         <span className="group-hover:translate-x-1 transition-transform duration-200">{link.name}</span>
-                      </a>
+                      </button>
                     </motion.li>
                   ))}
                 </ul>

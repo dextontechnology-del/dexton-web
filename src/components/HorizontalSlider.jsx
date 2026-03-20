@@ -15,8 +15,8 @@ export default function HorizontalSlider() {
 
     // Transform values for sticky positioning with fade animation
     const titleOpacity = useTransform(scrollYProgress, [0, 0.05, 0.1, 0.9, 1], [0, 0, 1, 1, 0]);
-    const cardsY = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [100, 0, 0, -100]);
-    const cardsOpacity = useTransform(scrollYProgress, [0, 0.05, 0.15, 0.9, 1], [0, 0, 1, 1, 0]);
+    // const cardsY = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [100, 0, 0, -100]);
+    // const cardsOpacity = useTransform(scrollYProgress, [0, 0.05, 0.15, 0.9, 1], [0, 0, 1, 1, 0]);
 
     const Cards = [
         {

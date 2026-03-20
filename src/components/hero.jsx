@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from 'framer-motion';
-import BackgroundImage from '../assets/white-back.jpg'
+// import BackgroundImage from '../assets/white-back.jpg'
 import hanshLogo from "../assets/hansh-removebg-logo.png"
 import ganrayaLogo from "../assets/ganraya-event-logo.png"
 import shubhamLogo from "../assets/SHUBHAMLOGOFINAL.png"

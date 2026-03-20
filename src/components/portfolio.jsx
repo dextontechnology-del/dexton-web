@@ -132,7 +132,7 @@ export default function Portfolio() {
                             {getVisibleItems().map((item, index) => {
                                 const isCenter = item.position === 0;
                                 let isLeft = item.position === -1;
-                                let isRight = item.position === 1;
+                                // let isRight = item.position === 1;
                                 let isFarRight = item.position === 2;
 
                                 return (

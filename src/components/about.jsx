@@ -3,19 +3,19 @@ import { motion } from 'framer-motion';
 import { ChartLine, BookCheck, CalendarCheck, Lightbulb, Star, Handshake, Rocket } from 'lucide-react';
 
 export default function About() {
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // const scrollToSection = (sectionId) => {
+  //   const element = document.getElementById(sectionId);
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
 
-  const stats = [
-    { number: "50+", label: "Projects Completed" },
-    { number: "05+", label: "Team Members" },
-    { number: "100%", label: "Client Satisfaction" },
-    { number: "2023", label: "Founded" }
-  ];
+  // const stats = [
+  //   { number: "50+", label: "Projects Completed" },
+  //   { number: "05+", label: "Team Members" },
+  //   { number: "100%", label: "Client Satisfaction" },
+  //   { number: "2023", label: "Founded" }
+  // ];
 
   const values = [
     {
@@ -133,7 +133,7 @@ export default function About() {
             Ready to transform your business with innovative technology solutions? 
             Let's discuss how we can help you achieve your goals.
           </p>
-          <button onClick={() => scrollToSection('footer')} className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-200 shadow-xl">
+          <button onClick={() => document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-200 shadow-xl">
             Get Started Today
           </button>
         </motion.div>
