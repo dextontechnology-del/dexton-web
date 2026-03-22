@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Instagram, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Menu, Instagram, Linkedin, Twitter, Facebook } from 'lucide-react';
 import Logo from '../assets/dexton-logo-png.png';
 
 export default function Navigation() {
@@ -23,12 +23,13 @@ export default function Navigation() {
     { name: 'Portfolio', href: '#portfolio' },
   ];
 
-  const socialLinks = [
-    { icon: <Instagram className="w-4 h-4" />, href: 'https://instagram.com' },
-    { icon: <Twitter className="w-4 h-4" />, href: 'https://twitter.com' },
-    { icon: <Linkedin className="w-4 h-4" />, href: 'https://linkedin.com' },
-    { icon: <Facebook className="w-4 h-4" />, href: 'https://facebook.com' },
-  ];
+  // Social links - can be used in mobile menu footer or expanded navigation
+  // const socialLinks = [
+  //   { icon: <Instagram className="w-4 h-4" />, href: 'https://instagram.com' },
+  //   { icon: <Twitter className="w-4 h-4" />, href: 'https://twitter.com' },
+  //   { icon: <Linkedin className="w-4 h-4" />, href: 'https://linkedin.com' },
+  //   { icon: <Facebook className="w-4 h-4" />, href: 'https://facebook.com' },
+  // ];
 
   return (
     <>

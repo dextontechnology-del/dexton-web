@@ -3,8 +3,6 @@ import { motion } from 'framer-motion';
 import { 
   Code2, 
   Zap, 
-  Palette, 
-  Globe, 
   Shield, 
   Rocket, 
   Smartphone,
