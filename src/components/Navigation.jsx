@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, Instagram, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import Logo from '../assets/dexton-logo-png.png';
 
 export default function Navigation() {
