@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
 import Navigation from './components/Navigation';
 import Hero from './components/hero';
 import About from './components/about';
