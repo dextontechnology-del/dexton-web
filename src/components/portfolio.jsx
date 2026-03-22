@@ -100,7 +100,7 @@ export default function Portfolio() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                        Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Portfolio</span>
+                        Our <span className="text-primary-600">Portfolio</span>
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                         Discover our latest projects and see how we've helped businesses transform their digital presence
@@ -132,7 +132,6 @@ export default function Portfolio() {
                             {getVisibleItems().map((item, index) => {
                                 const isCenter = item.position === 0;
                                 let isLeft = item.position === -1;
-                                // let isRight = item.position === 1;
                                 let isFarRight = item.position === 2;
 
                                 return (
@@ -163,9 +162,6 @@ export default function Portfolio() {
                                             isCenter ? 'cursor-pointer' : 'cursor-pointer hover:scale-105'
                                         }`}
                                         onClick={() => !isCenter && goToSlide((currentIndex + item.position + portfolioItems.length) % portfolioItems.length)}
-                                        style={{
-                                            
-                                        }}
                                     >
                                         <div className={`relative w-full h-full rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 ${
                                             isCenter 
@@ -178,11 +174,11 @@ export default function Portfolio() {
                                                 style={{ backgroundImage: `url(${item.image})` }}
                                             />
                                             
-                                            {/* Overlay Gradient */}
+                                            {/* Overlay Gradient - Stronger for better text visibility */}
                                             <div className={`absolute inset-0 bg-gradient-to-t ${
                                                 isCenter 
-                                                    ? 'from-black/60 via-black/20 to-transparent' 
-                                                    : 'from-black/80 via-black/40 to-transparent'
+                                                    ? 'from-black/90 via-black/50 to-transparent' 
+                                                    : 'from-black/95 via-black/70 to-transparent'
                                             }`} />
                                             
                                             {/* Content */}
@@ -192,7 +188,7 @@ export default function Portfolio() {
                                                     animate={{ y: 0, opacity: 1 }}
                                                     transition={{ delay: 0.2 }}
                                                 >
-                                                    <span className="inline-block px-3 py-1 bg-primary/80 backdrop-blur-sm rounded-full text-xs font-semibold mb-3">
+                                                    <span className="inline-block px-3 py-1 bg-black/60 backdrop-blur-sm rounded-full text-xs font-semibold mb-3">
                                                         {item.category}
                                                     </span>
                                                     <h3 className={`font-bold mb-2 ${
@@ -200,8 +196,8 @@ export default function Portfolio() {
                                                     }`}>
                                                         {item.title}
                                                     </h3>
-                                                    <p className={`text-gray-200 ${
-                                                        isCenter ? 'text-sm md:text-base' : 'text-xs md:text-sm'
+                                                    <p className={`text-sm leading-relaxed ${
+                                                        isCenter ? 'block' : 'hidden md:block'
                                                     }`}>
                                                         {item.description}
                                                     </p>
@@ -211,16 +207,8 @@ export default function Portfolio() {
                                             {/* Hover Effect for Center Card */}
                                             {isCenter && (
                                                 <motion.div
-                                                    className="absolute inset-0 bg-white/10 backdrop-blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-                                                    whileHover={{ scale: 1.02 }}
-                                                >
-                                                    <div className="text-center text-white">
-                                                        <p className="text-lg font-semibold mb-2">View Project</p>
-                                                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto">
-                                                            <ChevronRight className="w-6 h-6" />
-                                                        </div>
-                                                    </div>
-                                                </motion.div>
+                                                    className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"
+                                                />
                                             )}
                                         </div>
                                     </motion.div>
@@ -228,35 +216,36 @@ export default function Portfolio() {
                             })}
                         </AnimatePresence>
                     </div>
-                </div>
-                    
-                 <div className="flex justify-center items-center gap-3">
-                {/* Pagination Dots */}
-                <div className="flex justify-center items-center space-x-3 mt-12">
-                    {portfolioItems.map((_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => goToSlide(index)}
-                            className={`transition-all duration-300 rounded-full ${
-                                index === currentIndex
-                                    ? 'w-10 h-3 bg-gradient-to-r from-primary to-secondary scale-110'
-                                    : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
-                            }`}
-                            aria-label={`Go to slide ${index + 1}`}
-                            />
-                    ))}
-                </div>
 
-                {/* Auto-play Toggle */}
-                <div className="flex justify-center mt-8">
+                    {/* Dots Indicator */}
+                    <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+                        {portfolioItems.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => goToSlide(index)}
+                                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                    index === currentIndex 
+                                        ? 'bg-primary w-8' 
+                                        : 'bg-gray-400 hover:bg-gray-600'
+                                }`}
+                                aria-label={`Go to slide ${index + 1}`}
+                            />
+                        ))}
+                    </div>
+
+                    {/* Auto-play Toggle */}
                     <button
                         onClick={() => setIsAutoPlay(!isAutoPlay)}
-                        className="px-6 py-2 bg-gray-100 hover:bg-gray-200 rounded-full text-sm font-medium text-gray-700 transition-colors duration-300"
+                        className="absolute bottom-4 right-4 p-2 bg-white/70 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-300 group"
+                        aria-label={isAutoPlay ? "Pause auto-play" : "Start auto-play"}
                     >
-                        {isAutoPlay ? <Pause/> : <Play/> }
+                        {isAutoPlay ? (
+                            <Pause className="w-4 h-4 text-gray-700 group-hover:text-gray-900" />
+                        ) : (
+                            <Play className="w-4 h-4 text-gray-700 group-hover:text-gray-900" />
+                        )}
                     </button>
                 </div>
-            </div>
             </div>
         </motion.div>
     );

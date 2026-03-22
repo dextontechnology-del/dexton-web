@@ -1,45 +1,61 @@
-import React, { useRef, useState } from "react";
-import HorizontalSlider from "./HorizontalSlider";
-import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { 
+  Code2, 
+  Zap, 
+  Palette, 
+  Globe, 
+  Shield, 
+  Rocket, 
+  Smartphone,
+  Database,
+  Cloud,
+  Cpu
+} from 'lucide-react';
 
 export default function Services() {
-  const mobileProcessRef = useRef(null);
-  const [isFixed, setIsFixed] = useState(false);
-  
-  const { scrollYProgress } = useScroll({
-    target: mobileProcessRef,
-    offset: ["start start", "end end"]
-  });
-
-  // Track scroll progress to control fixed state
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    // Fix content between 10% and 85% scroll progress
-    setIsFixed(latest >= 0.1 && latest < 0.85);
-  });
-  
-  // Content fade in and out
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.08, 0.8, 0.95], [0, 1, 1, 0]);
-
-  // Card animations based on scroll progress with smooth easing
-  const card1Opacity = useTransform(scrollYProgress, [0.1, 0.25, 0.3], [1, 1, 0]);
-  const card1Scale = useTransform(scrollYProgress, [0.1, 0.25, 0.3], [1, 0.98, 0.95]);
-  const card1Y = useTransform(scrollYProgress, [0.1, 0.25, 0.3], [0, -10, -30]);
-  
-  const card2Opacity = useTransform(scrollYProgress, [0.25, 0.3, 0.5, 0.55], [0, 1, 1, 0]);
-  const card2Y = useTransform(scrollYProgress, [0.25, 0.3, 0.5, 0.55], [80, 0, 0, -30]);
-  const card2Scale = useTransform(scrollYProgress, [0.25, 0.3, 0.5, 0.55], [0.95, 1, 1, 0.98]);
-  
-  const card3Opacity = useTransform(scrollYProgress, [0.5, 0.55, 0.75, 0.8], [0, 1, 1, 0]);
-  const card3Y = useTransform(scrollYProgress, [0.5, 0.55, 0.75, 0.8], [80, 0, 0, -30]);
-  const card3Scale = useTransform(scrollYProgress, [0.5, 0.55, 0.75, 0.8], [0.95, 1, 1, 0.98]);
-  
-  const card4Opacity = useTransform(scrollYProgress, [0.75, 0.8, 0.85], [0, 1, 1]);
-  const card4Y = useTransform(scrollYProgress, [0.75, 0.8, 0.85], [80, 0, 0]);
-  const card4Scale = useTransform(scrollYProgress, [0.75, 0.8, 0.85], [0.95, 1, 1]);
+  const services = [
+    {
+      icon: <Code2 className="w-8 h-8" />,
+      title: "Web Development",
+      description: "Custom websites and web applications built with modern frameworks and best practices",
+      features: ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+    },
+    {
+      icon: <Smartphone className="w-8 h-8" />,
+      title: "Mobile Apps",
+      description: "Native and cross-platform mobile applications for iOS and Android",
+      features: ["React Native", "Flutter", "Swift", "Kotlin"]
+    },
+    {
+      icon: <Zap className="w-8 h-8" />,
+      title: "UI/UX Design",
+      description: "User-centered design solutions that delight and convert users",
+      features: ["Figma", "Adobe XD", "Prototyping", "User Research"]
+    },
+    {
+      icon: <Database className="w-8 h-8" />,
+      title: "Backend Development",
+      description: "Scalable server-side solutions with modern databases and APIs",
+      features: ["Node.js", "Python", "PostgreSQL", "MongoDB"]
+    },
+    {
+      icon: <Cloud className="w-8 h-8" />,
+      title: "Cloud Solutions",
+      description: "Cloud-native applications and infrastructure for modern businesses",
+      features: ["AWS", "Google Cloud", "Azure", "Docker"]
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: "Security & Performance",
+      description: "Comprehensive security audits and performance optimization",
+      features: ["Security Audits", "Performance Testing", "Code Review", "Monitoring"]
+    }
+  ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="w-full mx-auto">
+    <section className="py-20 bg-gradient-to-br from-neutral-50 via-white to-primary-50">
+      <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -48,142 +64,103 @@ export default function Services() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <HorizontalSlider />
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
+            Our <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">Services</span>
+          </h2>
+          <p className="text-lg text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+            Comprehensive technology solutions tailored to transform your business and drive measurable results
+          </p>
         </motion.div>
 
-        {/* Process Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="hidden md:block mb-20"
-        >
-          <h3 className="text-4xl font-bold text-gray-900 text-center mb-12">Our Process</h3>
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              { step: "01", title: "Discovery", description: "Understanding your needs and goals" },
-              { step: "02", title: "Planning", description: "Creating a strategic roadmap" },
-              { step: "03", title: "Development", description: "Building your solution with expertise" },
-              { step: "04", title: "Launch", description: "Deploying and optimizing for success" }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center group"
-              >
-                <div className="w-16 h-16 bg-gray-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold group-hover:scale-110 transition-transform duration-300">
-                  {item.step}
-                </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h4>
-                <p className="text-gray-600 text-sm">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Animated Process Section for mobile */}
-        <div
-          ref={mobileProcessRef}
-          className="block md:hidden h-[220vh] bg-gradient-to-b from-transparent via-gray-600 to-transparent"
-        >
-          {/* Fixed content container */}
-          <motion.div
-            style={{
-              opacity: contentOpacity,
-            }}
-            className={`${isFixed ? 'fixed top-[70px] left-0 right-0' : 'relative'} py-8`}
-          >
-            <motion.h3
-              initial={{ opacity: 0, y: 30 }}
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 3.0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="text-4xl font-semibold text-gray-900 text-center mb-4"
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="group relative bg-white rounded-2xl shadow-lg border border-neutral-200/50 p-8 hover:shadow-xl hover:border-primary-200 transition-all duration-300"
             >
-              Our Process
-            </motion.h3>
+              {/* Icon */}
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
+                className="w-16 h-16 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-2xl flex items-center justify-center mb-6 text-primary-600 group-hover:scale-110 transition-transform duration-300"
+              >
+                {service.icon}
+              </motion.div>
 
-            <motion.div className="">
-              <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black h-0.5 rounded-lg w-3/5 mx-auto mb-2"></div>
-              <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black h-0.5 rounded-lg w-2/5 mx-auto mb-2"></div>
-              <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black h-0.5 rounded-lg w-1/5 mx-auto mb-2"></div>
-              <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black h-0.5 rounded-lg w-[5%] mx-auto mb-2"></div>
-              <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black h-0.5 rounded-lg w-[1.5%] mx-auto mb-2"></div>
-              <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black h-0.5 rounded-full w-[1%] mx-auto"></div>
+              {/* Content */}
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-neutral-600 leading-relaxed mb-6">
+                  {service.description}
+                </p>
+
+                {/* Features */}
+                <div className="flex flex-wrap gap-2">
+                  {service.features.map((feature, featureIndex) => (
+                    <motion.span
+                      key={feature}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.4, delay: index * 0.1 + 0.3 + featureIndex * 0.1 }}
+                      className="inline-flex items-center px-3 py-1 bg-primary-100 text-primary-700 text-xs font-medium rounded-full group-hover:bg-primary-200 transition-all duration-300"
+                    >
+                      {feature}
+                    </motion.span>
+                  ))}
+                </div>
+
+                {/* CTA */}
+                <motion.a
+                  href="#portfolio"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 + 0.5 }}
+                  className="inline-flex items-center text-primary-600 font-semibold text-sm hover:text-primary-700 transition-colors duration-300 group-hover:translate-x-1"
+                >
+                  View Projects
+                  <Cpu className="w-4 h-4 ml-1 transition-transform duration-300" />
+                </motion.a>
+              </div>
             </motion.div>
-
-            <div className="relative h-[380px] flex items-center justify-center">
-              {/* Card 1 - Discovery */}
-              <motion.div
-                style={{
-                  opacity: card1Opacity,
-                  scale: card1Scale,
-                  y: card1Y,
-                }}
-                className="absolute text-center group bg-white rounded-lg p-6 shadow-lg mx-4 w-[calc(100%-2rem)]"
-              >
-                <div className="w-16 h-16 bg-gray-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold group-hover:scale-110 transition-transform duration-300">
-                  01
-                </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Discovery</h4>
-                <p className="text-gray-600 text-sm">Understanding customer's needs, goals, target audience, and business objectives.</p>
-              </motion.div>
-              
-              {/* Card 2 - Planning */}
-              <motion.div
-                style={{
-                  opacity: card2Opacity,
-                  scale: card2Scale,
-                  y: card2Y,
-                }}
-                className="absolute text-center group bg-white rounded-lg p-6 shadow-lg mx-4 w-[calc(100%-2rem)]"
-              >
-                <div className="w-16 h-16 bg-gray-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold group-hover:scale-110 transition-transform duration-300">
-                  02
-                </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Planning</h4>
-                <p className="text-gray-600 text-sm">Creating a strategic roadmap of project. for better understanding and execution.</p>
-              </motion.div>
-              
-              {/* Card 3 - Development */}
-              <motion.div
-                style={{
-                  opacity: card3Opacity,
-                  scale: card3Scale,
-                  y: card3Y,
-                }}
-                className="absolute text-center group bg-white rounded-lg p-6 shadow-lg mx-4 w-[calc(100%-2rem)]"
-              >
-                <div className="w-16 h-16 bg-gray-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold group-hover:scale-110 transition-transform duration-300">
-                  03
-                </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Development</h4>
-                <p className="text-gray-600 text-sm">Building your solution with expertise and best practices.</p>
-              </motion.div>
-              
-              {/* Card 4 - Launch */}
-              <motion.div
-                style={{
-                  opacity: card4Opacity,
-                  scale: card4Scale,
-                  y: card4Y,
-                }}
-                className="absolute text-center group bg-white rounded-lg p-6 shadow-lg mx-4 w-[calc(100%-2rem)]"
-              >
-                <div className="w-16 h-16 bg-gray-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold group-hover:scale-110 transition-transform duration-300">
-                  04
-                </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Launch</h4>
-                <p className="text-gray-600 text-sm">Deploying and optimizing for success.</p>
-              </motion.div>
-            </div>
-          </motion.div>
+          ))}
         </div>
 
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <div className="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 sm:p-12 shadow-xl">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Ready to Get Started?
+            </h3>
+            <p className="text-primary-100 mb-6 max-w-2xl mx-auto">
+              Let's discuss how our expert team can help bring your vision to life with cutting-edge solutions
+            </p>
+            <motion.a
+              href="#footer"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-xl hover:bg-primary-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+            >
+              Start Your Project
+              <Rocket className="w-5 h-5 ml-2 transition-transform duration-300" />
+            </motion.a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

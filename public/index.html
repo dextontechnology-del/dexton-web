@@ -1,43 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/dexton-logo-png.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Dexton Technology</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/dexton-logo-png.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Dexton Technology - Digital Innovation & Web Development Solutions</title>
+  <meta name="title" content="Dexton Technology - Digital Innovation & Web Development Solutions" />
+  <meta name="description" content="Transform your business with cutting-edge web development, mobile apps, and digital solutions. Dexton Technology delivers innovative technology services that drive measurable results." />
+  <meta name="keywords" content="web development, mobile apps, digital solutions, technology services, React, JavaScript, UI/UX design, software development, app development, digital transformation" />
+  <meta name="author" content="Dexton Technology" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dexton Technology - Digital Innovation Solutions" />
+  <meta property="og:description" content="Transform your business with cutting-edge web development, mobile apps, and digital solutions. We deliver innovative technology services that drive measurable results." />
+  <meta property="og:image" content="%PUBLIC_URL%/dexton-logo-png.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://dextontechnology.com" />
+  <meta property="og:site_name" content="Dexton Technology" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="Dexton Technology - Digital Innovation Solutions" />
+  <meta property="twitter:description" content="Transform your business with cutting-edge web development, mobile apps, and digital solutions." />
+  <meta property="twitter:image" content="%PUBLIC_URL%/dexton-logo-png.png" />
+  <meta property="twitter:creator" content="@dextontechnology" />
+  
+  <!-- Additional SEO -->
+  <link rel="canonical" href="https://dextontechnology.com" />
+  <meta name="theme-color" content="#3b82f6" />
+  <meta name="msapplication-TileColor" content="#3b82f6" />
+  
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/dexton-logo-png.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/dexton-logo-png.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/dexton-logo-png.png" />
+  
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- DNS Prefetch -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+  
+  <!-- Performance Hints -->
+  <link rel="preload" href="%PUBLIC_URL%/dexton-logo-png.png" as="image" type="image/png" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Dexton Technology",
+    "url": "https://dextontechnology.com",
+    "logo": "https://dextontechnology.com/dexton-logo-png.png",
+    "description": "Professional web development, mobile apps, and digital solutions company",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1067, Rajmahal Mall, Opp. Millenium Society, Dindoli",
+      "addressLocality": "Surat",
+      "addressRegion": "Gujarat",
+      "postalCode": "395001",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+918780687178",
+      "contactType": "customer service",
+      "email": "dextontechnology@gmail.com"
+    },
+    "sameAs": [
+      "https://www.instagram.com/dextontechnology",
+      "https://www.linkedin.com/company/dextontechnology",
+      "https://twitter.com/dextontechnology"
+    ],
+    "services": [
+      "Web Development",
+      "Mobile App Development",
+      "UI/UX Design",
+      "Digital Transformation"
+    ]
+  }
+  </script>
+  
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+  
+  <!-- Viewport and Mobile Optimization -->
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Dexton Technology" />
+  
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+</head>
+<body>
+  <noscript>
+    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+      <h1>JavaScript Required</h1>
+      <p>Please enable JavaScript to run this application.</p>
+      <p>Dexton Technology - Digital Innovation Solutions</p>
+    </div>
+  </noscript>
+  <div id="root"></div>
+</body>
 </html>
