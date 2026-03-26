@@ -10,7 +10,7 @@ import BhumiPutraLogo from "../assets/bhumiputra-logo.png"
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-neutral-50 via-white to-primary-50">
+    <section className="relative min-h-screen flex flex-col overflow-hidden bg-gradient-to-br from-neutral-50 via-white to-primary-50">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute inset-0" style={{
@@ -37,85 +37,87 @@ export default function Hero() {
       />
 
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-        >
-          {/* Badge */}
+      <div className="relative z-10 flex-1 flex items-center justify-center">
+        <div className="container mx-auto px-6 text-center py-12 md:py-14">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="inline-flex items-center px-4 py-2 bg-primary-600 text-white text-sm font-medium rounded-full mb-8 shadow-lg"
-          >
-            <span className="w-2 h-2 bg-success-400 rounded-full mr-2 animate-pulse"></span>
-            <span>Building Digital Excellence</span>
-          </motion.div>
-
-          {/* Main Title */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight tracking-tight">
-            <span className="block mb-2">Innovation Meets</span>
-            <span className="block bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-              Excellence
-            </span>
-          </h1>
-
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="text-lg sm:text-xl text-neutral-600 mb-8 max-w-3xl mx-auto leading-relaxed"
+            transition={{ duration: 1, delay: 0.2 }}
           >
-            Empowering businesses with cutting-edge technology solutions that drive growth, 
-            efficiency, and success in the digital age
-          </motion.p>
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="inline-flex items-center px-4 py-2 bg-primary-600 text-white text-xs md:text-sm font-medium rounded-full mb-6 md:mb-8 shadow-lg"
+            >
+              <div className="w-3 h-3 bg-success-400 rounded-full mr-2 animate-pulse"> </div>
+              <span>Welcome to Dexton Technology</span>
+            </motion.div>
 
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-          >
-            <button className="group relative px-8 py-4 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1">
-              <span className="relative z-10">Get Started</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
-            <button className="group relative px-8 py-4 bg-white text-primary-600 font-semibold rounded-xl border-2 border-neutral-200 hover:border-primary-300 hover:bg-primary-50 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1">
-              <span className="relative z-10">Learn More</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
-          </motion.div>
+            {/* Main Title */}
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-4 md:mb-6 leading-tight tracking-tight">
+              <span className="block mb-2">Innovation Meets</span>
+              <span className="block bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                Excellence
+              </span>
+            </h1>
 
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12 max-w-4xl mx-auto mb-12"
-          >
-            {[/* eslint-disable @typescript-eslint/no-unused-vars */
-              { number: "10+", label: "Projects" },
-              { number: "7", label: "Team Members" },
-              { number: "100%", label: "Satisfaction" },
-              { number: "2023", label: "Founded" }
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
-                className="text-center flex flex-col items-center"
-              >
-                <div className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-1">{stat.number}</div>
-                <div className="text-sm text-neutral-600 whitespace-nowrap">{stat.label}</div>
-              </motion.div>
-            ))}
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.6 }}
+              className="text-base md:text-lg lg:text-xl text-neutral-600 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed px-4"
+            >
+              Empowering businesses with cutting-edge technology solutions that drive growth, 
+              efficiency, and success in the digital age
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-8 md:mb-12"
+            >
+              <button className="group relative px-6 md:px-8 py-3 md:py-4 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto">
+                <span className="relative z-10">Get Started</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </button>
+              <button className="group relative px-6 md:px-8 py-3 md:py-4 bg-white text-primary-600 font-semibold rounded-xl border-2 border-neutral-200 hover:border-primary-300 hover:bg-primary-50 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto">
+                <span className="relative z-10">Learn More</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </button>
+            </motion.div>
+
+            {/* Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1 }}
+              className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-8 lg:gap-12 max-w-4xl mx-auto"
+            >
+              {[/* eslint-disable @typescript-eslint/no-unused-vars */
+                { number: "10+", label: "Projects" },
+                { number: "7", label: "Team Members" },
+                { number: "100%", label: "Satisfaction" },
+                { number: "2023", label: "Founded" }
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
+                  className="text-center flex flex-col items-center p-2"
+                >
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-900 mb-1">{stat.number}</div>
+                  <div className="text-xs sm:text-sm text-neutral-600 whitespace-nowrap">{stat.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Client Logos */}
@@ -123,13 +125,13 @@ export default function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.4 }}
-        className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-neutral-200"
+        className="relative z-10 bg-white/90 backdrop-blur-md border-t border-neutral-200 py-4 md:py-6"
       >
-        <div className="container mx-auto px-6 py-6">
-          <div className="text-center mb-4">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-3 md:mb-4">
             <p className="text-xs sm:text-sm font-medium text-neutral-500 uppercase tracking-wider">Trusted by leading companies</p>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10">
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
             {[/* eslint-disable @typescript-eslint/no-unused-vars */
               { name: "Hansh", logo: hanshLogo },
               { name: "Ganraya", logo: ganrayaLogo },
@@ -145,7 +147,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center justify-center h-10 sm:h-12 w-16 sm:w-20"
+                className="flex items-center justify-center h-8 sm:h-10 md:h-12 w-12 sm:w-16 md:w-20"
               >
                 <img
                   src={client.logo}

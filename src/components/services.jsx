@@ -122,10 +122,10 @@ export default function Services() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.4, delay: index * 0.1 + 0.5 }}
-                  className="inline-flex items-center text-primary-600 font-semibold text-sm hover:text-primary-700 transition-colors duration-300 group-hover:translate-x-1"
+                  className="inline-flex items-center justify-center gap-2 text-primary-600 font-semibold text-sm group-hover:bg-slate-400/30 p-2 rounded-lg filter backdrop-blur-sm hover:text-primary-700 transition-colors duration-300 group-hover:translate-x-1 mt-2"
                 >
                   View Projects
-                  <Cpu className="w-4 h-4 ml-1 transition-transform duration-300" />
+                  <Cpu className="w-4 h-4 transition-transform duration-300" />
                 </motion.a>
               </div>
             </motion.div>

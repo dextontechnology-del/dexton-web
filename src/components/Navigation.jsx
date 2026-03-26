@@ -53,8 +53,11 @@ export default function Navigation() {
                 alt="Dexton Technology" 
                 className="h-8 w-8 lg:h-10 lg:w-10"
               />
-              <span className="ml-3 text-xl font-bold text-neutral-900 hidden lg:block">
+              <span className="hidden md:block ml-3 text-xl font-bold text-neutral-900">
                 Dexton Technology
+              </span>
+              <span className="block md:hidden ml-3 text-2xl font-bold text-neutral-900">
+                Dexton
               </span>
             </motion.div>
 

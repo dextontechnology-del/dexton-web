@@ -88,7 +88,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="py-20 bg-gradient-to-br from-gray-50 to-white min-h-screen flex items-center"
+            className="py-20 bg-gradient-to-br from-gray-50 to-white min-h-screen flex items-center overflow-hidden"
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 {/* Header */}
