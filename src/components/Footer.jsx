@@ -265,11 +265,6 @@ export default function Footer() {
           </div>
         </motion.div>
       </div>
-      <div className="fixed bottom-6 right-6 md:w-14 md:h-14 w-12 h-12 bg-green-500 hover:bg-green-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center backdrop-blur-xl bg-opacity-90 z-50">
-        <a href="https://wa.me/917621060510" target="_blank" rel="noopener noreferrer">
-          <img src={WhatsappLogo} alt="WhatsApp" className="w-8 h-8 object-contain filter brightness-0 invert" />
-        </a>
-      </div>
     </footer>
   );
 }

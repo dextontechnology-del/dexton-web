@@ -217,34 +217,43 @@ export default function Portfolio() {
                         </AnimatePresence>
                     </div>
 
-                    {/* Dots Indicator */}
-                    <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
-                        {portfolioItems.map((_, index) => (
-                            <button
-                                key={index}
-                                onClick={() => goToSlide(index)}
-                                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                                    index === currentIndex 
-                                        ? 'bg-primary w-8' 
-                                        : 'bg-gray-400 hover:bg-gray-600'
-                                }`}
-                                aria-label={`Go to slide ${index + 1}`}
-                            />
-                        ))}
-                    </div>
+                    {/* Controls Container */}
+                    <div className="absolute bottom-0 left-0 right-0 flex flex-row justify-center items-center gap-3 px-4">
+                        {/* Dots Indicator */}
+                        <div className="flex justify-center space-x-2">
+                            {portfolioItems.map((_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => goToSlide(index)}
+                                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                        index === currentIndex 
+                                            ? 'bg-blue-600 w-8' 
+                                            : 'bg-gray-400 hover:bg-gray-600'
+                                    }`}
+                                    aria-label={`Go to slide ${index + 1}`}
+                                />
+                            ))}
+                        </div>
 
-                    {/* Auto-play Toggle */}
-                    <button
-                        onClick={() => setIsAutoPlay(!isAutoPlay)}
-                        className="absolute bottom-4 right-4 p-2 bg-white/70 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-300 group"
-                        aria-label={isAutoPlay ? "Pause auto-play" : "Start auto-play"}
-                    >
-                        {isAutoPlay ? (
-                            <Pause className="w-4 h-4 text-gray-700 group-hover:text-gray-900" />
-                        ) : (
-                            <Play className="w-4 h-4 text-gray-700 group-hover:text-gray-900" />
-                        )}
-                    </button>
+                        {/* Auto-play Toggle */}
+                        <button
+                            onClick={() => setIsAutoPlay(!isAutoPlay)}
+                            className="px-4 py-2 bg-white/70 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-300 group flex items-center gap-2 text-sm font-medium text-gray-700"
+                            aria-label={isAutoPlay ? "Pause auto-play" : "Start auto-play"}
+                        >
+                            {isAutoPlay ? (
+                                <>
+                                    <Pause className="w-4 h-4" />
+                                    <span className="hidden sm:inline">Pause</span>
+                                </>
+                            ) : (
+                                <>
+                                    <Play className="w-4 h-4" />
+                                    <span className="hidden sm:inline">Play</span>
+                                </>
+                            )}
+                        </button>
+                    </div>
                 </div>
             </div>
         </motion.div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, lazy, Suspense } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/hero';
 import About from './components/about';
@@ -6,6 +6,12 @@ import Services from './components/services';
 import Portfolio from './components/portfolio';
 import Footer from './components/Footer';
 import SplashScreen from './components/SplashScreen';
+import FAQ from './components/FAQ';
+import FloatingCTA from './components/FloatingCTA';
+import { SoftwareCompanySchema, ServicesSchema } from './components/SEO';
+
+// Lazy load heavy components for better performance
+// const Portfolio = lazy(() => import('./components/portfolio'));
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -40,31 +46,42 @@ function App() {
       {/* Splash Screen */}
       {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
       
+      {/* Structured Data Schemas */}
+      <SoftwareCompanySchema />
+      <ServicesSchema />
+      
       <div className="min-h-screen bg-white">
         {/* Navigation */}
         <Navigation />
 
         {/* Main Content */}
         <main className="pt-16">
-          <section id="hero">
+          <section id="hero" aria-label="Hero section">
             <Hero />
           </section>
           
-          <section id="about">
+          <section id="about" aria-label="About section">
             <About />
           </section>
           
-          <section id="services">
+          <section id="services" aria-label="Services section">
             <Services />
           </section>
           
-          <section id="portfolio">
+          <section id="portfolio" aria-label="Portfolio section">
             <Portfolio />
+          </section>
+          
+          <section id="faq" aria-label="Frequently asked questions">
+            <FAQ />
           </section>
         </main>
 
         {/* Footer */}
         <Footer />
+        
+        {/* Floating CTA for Lead Generation */}
+        <FloatingCTA />
       </div>
     </>
   );

@@ -15,39 +15,39 @@ export default function Services() {
   const services = [
     {
       icon: <Code2 className="w-8 h-8" />,
-      title: "Web Development",
-      description: "Custom websites and web applications built with modern frameworks and best practices",
-      features: ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+      title: "Custom Software Development",
+      description: "Enterprise-grade custom software solutions built with cutting-edge technologies for global clients",
+      features: ["React.js", "Next.js", "TypeScript", "Node.js", "Python"]
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
-      title: "Mobile Apps",
-      description: "Native and cross-platform mobile applications for iOS and Android",
-      features: ["React Native", "Flutter", "Swift", "Kotlin"]
+      title: "Mobile App Development",
+      description: "Native and cross-platform mobile applications for iOS and Android with global deployment",
+      features: ["React Native", "Flutter", "Swift", "Kotlin", "App Store"]
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "UI/UX Design",
-      description: "User-centered design solutions that delight and convert users",
-      features: ["Figma", "Adobe XD", "Prototyping", "User Research"]
+      title: "AI & Machine Learning",
+      description: "Advanced AI solutions including machine learning, NLP, computer vision, and intelligent automation",
+      features: ["TensorFlow", "PyTorch", "OpenAI", "ML Models", "NLP"]
     },
     {
       icon: <Database className="w-8 h-8" />,
-      title: "Backend Development",
-      description: "Scalable server-side solutions with modern databases and APIs",
-      features: ["Node.js", "Python", "PostgreSQL", "MongoDB"]
+      title: "SaaS Development",
+      description: "Full-cycle SaaS platforms with multi-tenant architecture and scalable cloud infrastructure",
+      features: ["Multi-tenant", "Cloud Native", "Microservices", "APIs", "Scalable"]
     },
     {
       icon: <Cloud className="w-8 h-8" />,
-      title: "Cloud Solutions",
-      description: "Cloud-native applications and infrastructure for modern businesses",
-      features: ["AWS", "Google Cloud", "Azure", "Docker"]
+      title: "Cloud & DevOps",
+      description: "Cloud-native applications with CI/CD pipelines and automated deployment across major cloud providers",
+      features: ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes"]
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "Security & Performance",
-      description: "Comprehensive security audits and performance optimization",
-      features: ["Security Audits", "Performance Testing", "Code Review", "Monitoring"]
+      title: "Security & Compliance",
+      description: "Enterprise-grade security, compliance, and performance optimization for global applications",
+      features: ["Security Audits", "GDPR", "SOC 2", "Performance", "Monitoring"]
     }
   ];
 
@@ -66,7 +66,7 @@ export default function Services() {
             Our <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">Services</span>
           </h2>
           <p className="text-lg text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive technology solutions tailored to transform your business and drive measurable results
+            Enterprise-grade software development solutions for global clients. We help startups and enterprises worldwide build scalable, secure, and high-performance digital products.
           </p>
         </motion.div>
 
@@ -142,10 +142,10 @@ export default function Services() {
         >
           <div className="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 sm:p-12 shadow-xl">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Ready to Get Started?
+              Build Your Next Project With Us
             </h3>
             <p className="text-primary-100 mb-6 max-w-2xl mx-auto">
-              Let's discuss how our expert team can help bring your vision to life with cutting-edge solutions
+              Partner with our global development team to build enterprise-grade software solutions that scale with your business
             </p>
             <motion.a
               href="#footer"
@@ -154,7 +154,7 @@ export default function Services() {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-xl hover:bg-primary-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
-              Start Your Project
+              Book a Free Consultation
               <Rocket className="w-5 h-5 ml-2 transition-transform duration-300" />
             </motion.a>
           </div>
