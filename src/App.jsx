@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/hero';
 import About from './components/about';
 import Services from './components/services';
 import Portfolio from './components/portfolio';
 import Footer from './components/Footer';
+import SplashScreen from './components/SplashScreen';
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
   useEffect(() => {
     // Update page title
     document.title = 'Dexton Technology - Digital Innovation & Web Development Solutions';
@@ -33,32 +36,37 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <Navigation />
+    <>
+      {/* Splash Screen */}
+      {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
+      
+      <div className="min-h-screen bg-white">
+        {/* Navigation */}
+        <Navigation />
 
-      {/* Main Content */}
-      <main className="pt-16">
-        <section id="hero">
-          <Hero />
-        </section>
-        
-        <section id="about">
-          <About />
-        </section>
-        
-        <section id="services">
-          <Services />
-        </section>
-        
-        <section id="portfolio">
-          <Portfolio />
-        </section>
-      </main>
+        {/* Main Content */}
+        <main className="pt-16">
+          <section id="hero">
+            <Hero />
+          </section>
+          
+          <section id="about">
+            <About />
+          </section>
+          
+          <section id="services">
+            <Services />
+          </section>
+          
+          <section id="portfolio">
+            <Portfolio />
+          </section>
+        </main>
 
-      {/* Footer */}
-      <Footer />
-    </div>
+        {/* Footer */}
+        <Footer />
+      </div>
+    </>
   );
 }
 
