@@ -197,7 +197,7 @@ export default function Footer() {
                 >
                   <MapPin className="w-5 h-5 text-primary-400 group-hover:text-primary-300 transition-colors duration-300 mt-1 flex-shrink-0" />
                   <div className="text-neutral-300 leading-relaxed">
-                    1067, Rajmahal Mall, Opp. Millenium Society, Dindoli, Surat, Gujarat 395001
+                    Surat, Gujarat 395001
                   </div>
                 </motion.div>
               </div>

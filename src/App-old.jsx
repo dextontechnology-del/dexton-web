@@ -388,7 +388,7 @@ function App() {
                   >
                     <MapPin/>
                     <div>
-                      <p className="text-gray-300 text-sm group-hover:text-white transition-colors duration-200">1067, Rajmahal Mall, Opp. Millenium Society, Dindoli, Surat, Gujarat 395001</p>
+                      <p className="text-gray-300 text-sm group-hover:text-white transition-colors duration-200">Surat, Gujarat 395001</p>
                     </div>
                   </motion.div>
                   <motion.div
