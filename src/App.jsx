@@ -1,4 +1,4 @@
-import React, { useEffect, useState, lazy, Suspense } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/hero';
 import About from './components/about';
