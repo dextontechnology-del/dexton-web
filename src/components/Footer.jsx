@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter, Facebook, ArrowRight, Send, Lock, FileText } from 'lucide-react';
+import React from 'react';
+// Footer component with contact information and quick links
 import Logo from '../assets/dexton-logo-png.png';
 import WhatsappLogo from '../assets/whatsapp_logo.png';
 
