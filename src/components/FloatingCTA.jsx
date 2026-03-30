@@ -34,7 +34,7 @@ export default function FloatingCTA() {
     {
       icon: <MessageCircle className="w-5 h-5" />,
       label: "WhatsApp",
-      href: "https://wa.me/917621060510?text=Hello%20Dexton%20Technology,%20I%20would%20like%20to%20inquire%20about%20your%20services.",
+      href: "https://wa.me/918780687178?text=Hello%20Dexton%20Technology,%20I%20would%20like%20to%20inquire%20about%20your%20services.",
       color: "bg-green-500 hover:bg-green-600",
       ariaLabel: "Chat on WhatsApp"
     },

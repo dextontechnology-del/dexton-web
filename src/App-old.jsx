@@ -397,7 +397,7 @@ function App() {
                     className="flex items-center space-x-3 group"
                   >
                       <Phone/>                    
-                    <a href="tel:+917621060510" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
+                    <a href="tel:+918780687178" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
                       +91 878 068 7178
                     </a>
                   </motion.div>
