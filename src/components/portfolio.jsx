@@ -5,6 +5,7 @@ import CoutureImage from "../assets/couture.png"
 import GanrayaEventImage from "../assets/ganraya-event.png"
 import GlobalTradeImage from "../assets/global-trade.png"
 import ShubhamImage from "../assets/shubham-insurance.png"
+import BhumiputraAgroImage from "../assets/Bhumiputra-agro.png"
 
 const portfolioItems = [
     {
@@ -34,6 +35,13 @@ const portfolioItems = [
         description: "Fashion & Lifestyle Brand Web-Site with Attractive Styling and Designing implemented by Dexton Technology.",
         image: CoutureImage,
         category: "E-commerce"
+    },
+    {
+        id: 5,
+        title: "Bhumiputra Agro",
+        description: "Agricultural solutions platform helping farmers with modern technology and sustainable farming practices.",
+        image: BhumiputraAgroImage,
+        category: "Agriculture"
     }
 ];
 
